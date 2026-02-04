@@ -30,7 +30,7 @@ This script:
 - Syncs it correctly with Hyprcursor  
 - Makes sure your cursor **actually changes**  
 - Saves you from ritual sacrifices and forum-diving  
-
+- (Cursor might take time to reload if youre on a low-end system... ok?)
 ---
 
 ## ✨ Features
@@ -44,7 +44,7 @@ This script:
 ## 📦 Requirements
 - Hyprland  (Obviously)
 - Hyprcursor  
-- NWG-Look (Or any software but it should write changes to `~/.local/share/icons/default/index.theme` and `~/.config/gtk-3.0/settings.ini`)
+- NWG-Look
 - A brain (optional, script does the thinking) 
 
 ---
