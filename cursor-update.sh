@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
-# Hyprland Cursor Updater (One-Shot)
 set -e
 
 # --- Configuration ---
 CURSOR_CONF="$HOME/.config/hypr/cursors.conf"
-ICON_THEME_FILE="$HOME/.local/share/icons/default/index.theme"
+SETTINGS="$HOME/.config/gtk-3.0/settings.ini"
 
 # --- Logic ---
 get_theme() {
-    if [[ -f "$ICON_THEME_FILE" ]]; then
+    if [[ -f "$SETTINGS" ]]; then
         # Extract theme name, handling spaces/tabs safely
-        awk -F= '/Inherits/ {gsub(/[ \t]/, "", $2); print $2}' "$ICON_THEME_FILE"
+        grep "gtk-cursor-theme-name" $SETTINGS | cut -d '=' -f2
     else
         echo "Bibata-Modern-Ice"
     fi
 }
 get_size () {
-    grep "gtk-cursor-theme-size" ~/.config/gtk-3.0/settings.ini | cut -d'=' -f2
+    if [[ -f "$SETTINGS"]]
+        grep "gtk-cursor-theme-size" $SETTINGS | cut -d'=' -f2
 }
 
 # Ensure config dir exists
