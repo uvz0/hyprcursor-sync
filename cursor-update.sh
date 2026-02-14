@@ -14,9 +14,7 @@ get_theme() {
         echo "Bibata-Modern-Ice"
     fi
 }
-get_size () {
-    grep "gtk-cursor-theme-size" $SETTINGS | cut -d'=' -f2
-}
+get_size() { grep "gtk-cursor-theme-size" "$SETTINGS" 2>/dev/null | cut -d'=' -f2 || echo "24"; }
 
 # Ensure config dir exists
 mkdir -p "$(dirname "$CURSOR_CONF")"
