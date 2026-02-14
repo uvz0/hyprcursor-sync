@@ -19,9 +19,9 @@ get_size() { grep "gtk-cursor-theme-size" "$SETTINGS" 2>/dev/null | cut -d'=' -f
 # Ensure config dir exists
 mkdir -p "$(dirname "$CURSOR_CONF")"
 
-THEME=$(get_theme)
-SIZE=$(get_size)
-SIZE="${SIZE:-24}"
+# Change this in your cursor-update.sh
+THEME=$(get_theme || echo "Bibata-Modern-Ice")
+SIZE=$(get_size || echo "24")
 
 # 1. Update Persistent Config
 cat > "$CURSOR_CONF" <<EOF
